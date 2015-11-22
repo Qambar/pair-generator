@@ -1,18 +1,22 @@
-<form role="form" ng-controller="developer">
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input
-            id="name"
-            type="text"
-            class="form-control"
-            placeholder="Please enter a name for pairing."
-            ng-model="name"
-            ng-empty
-        />
-  </div>
-  <button class="btn btn-default">
-    <i class="glyphicon glyphicon-plus-sign"></i> Add
-  </button>
-</form>
+<span ng-controller="MainCtrl">
+    <div>
+        <span ng-include src="'views/partials/user/form.html'"></span>
+    </div>
 
-
+    <div class="row">
+        <div class="col-sm-6">
+            <hr />
+            <h3>User List ({{count}})</h3>
+            <div>
+                <span ng-include src="'views/partials/user/list.html'"></span>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <hr />
+            <h3>Pairs</h3>
+            <div>
+                <span ng-include src="'views/partials/pairs.html'"></span>
+            </div>
+        </div>
+    </div>
+</span>

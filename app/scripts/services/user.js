@@ -23,7 +23,7 @@ angular.module('pairGeneratorApp')
       _validateUser(user);
 
       if (_userExists(user)) {
-        throw new Error("User with the same name already exists");
+        throw new Error('User with the same name already exists');
       }
 
       user.id = _virtualIdCounter;
@@ -49,7 +49,7 @@ angular.module('pairGeneratorApp')
         return true;
       }
 
-      throw new Error("Invalid user id provided.");
+      throw new Error('Invalid user id provided.');
 
     };
 
@@ -80,22 +80,22 @@ angular.module('pairGeneratorApp')
      * @private
      */
     function _validateUser(user) {
-      if (Object.keys(user).length == 0) {
-        throw new Error("User should have a name and type");
+      if (Object.keys(user).length === 0) {
+        throw new Error('User should have a name and type');
       }
 
       if (
-        angular.isUndefined(user.name)
-        || (user.name).trim() === ""
+        angular.isUndefined(user.name) ||
+        (user.name).trim() === ''
       ) {
-        throw new Error("User should have a name");
+        throw new Error('User should have a name');
       }
 
       if (
-        angular.isUndefined(user.type)
-        || (user.type).trim() === ""
+        angular.isUndefined(user.type) ||
+        (user.type).trim() === ''
       ) {
-        throw new Error("User should have a type");
+        throw new Error('User should have a type');
       }
 
     }
