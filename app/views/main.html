@@ -1,9 +1,18 @@
-<form role="form">
+<form role="form" ng-controller="developer">
   <div class="form-group">
     <label for="name">Name:</label>
-    <input type="text" class="form-control" id="name">
+    <input
+            id="name"
+            type="text"
+            class="form-control"
+            placeholder="Please enter a name for pairing."
+            ng-model="name"
+            ng-empty
+        />
   </div>
-  <button class="btn btn-default">Add</button>
+  <button class="btn btn-default">
+    <i class="glyphicon glyphicon-plus-sign"></i> Add
+  </button>
 </form>
 
 
