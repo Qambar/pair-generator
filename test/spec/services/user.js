@@ -145,5 +145,30 @@ describe('Service: user', function () {
 
   });
 
+  it('should let you get the right user', function() {
+    var user1Obj = {
+      "name" : "user1",
+      "type" : "Developer"
+    };
+
+    user.add(user1Obj);
+
+    var user2Obj = {
+      "name" : "user2",
+      "type" : "Developer"
+    };
+
+    user.add(user2Obj);
+
+    var user1 = user.get(1);
+    var user2 = user.get(2);
+
+    expect(user1.name).toBe(user1Obj.name);
+    expect(user1.type).toBe(user1Obj.type);
+
+    expect(user2.name).toBe(user2Obj.name);
+    expect(user2.type).toBe(user2Obj.type);
+
+  });
 
 });

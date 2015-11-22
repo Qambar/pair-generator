@@ -58,9 +58,11 @@ angular.module('pairGeneratorApp')
      * @returns user object
      */
     this.get = function(id) {
-      return _users.filter(function(u) {
+      var result = _users.filter(function(u) {
         return u.id === id;
       });
+
+      return result[0];
     };
 
     /**
