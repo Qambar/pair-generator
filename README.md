@@ -1,7 +1,8 @@
 # pair-generator
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.14.0.
+This project is a simple angularjs app to generate pairs.
+
+![Screenshot of front-end](screenshot.png)
 
 ## Build & development
 
