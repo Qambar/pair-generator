@@ -21,15 +21,17 @@ angular.module('pairGeneratorApp')
         'type': 'developer'
       };
 
-      user.add(developer);
+      try {
+        user.add(developer);
+      } catch(e) {
+        alert(e.message);
+      }
 
       $scope.count = $scope.users.length;
 
       if ($scope.count >= 2) {
         $scope.pairs = pairing.generatePairs($scope.users);
       }
-
-      console.log($scope.pairs);
 
     };
 

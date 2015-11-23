@@ -86,6 +86,7 @@ angular.module('pairGeneratorApp')
 
       if (
         angular.isUndefined(user.name) ||
+        !user.name ||
         (user.name).trim() === ''
       ) {
         throw new Error('User should have a name');
@@ -93,6 +94,7 @@ angular.module('pairGeneratorApp')
 
       if (
         angular.isUndefined(user.type) ||
+        !user.type ||
         (user.type).trim() === ''
       ) {
         throw new Error('User should have a type');

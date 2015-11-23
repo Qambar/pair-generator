@@ -2,17 +2,33 @@
 
 describe('Service: pairing', function () {
 
+  var mockCombinatorics;
+
   // load the service's module
   beforeEach(module('pairGeneratorApp'));
 
-  // instantiate service
-  var pairing;
-  beforeEach(inject(function (_pairing_) {
-    pairing = _pairing_;
-  }));
 
-  it('should do something', function () {
-    expect(!!pairing).toBe(true);
+  beforeEach(function() {
+    mockCombinatorics =  {
+      combination: function() {
+        var dummyObj = {
+          "toArray" : function() {
+            return ["DUMMY"];
+          }
+        };
+
+        return dummyObj;
+      }
+    };
+
+    module(function ($provide) {
+      $provide.value('Combinatorics', mockCombinatorics);
+    });
+
   });
+
+  it('should generate pairs', inject(function (pairing) {
+    expect(pairing.generatePairs(['A','B','C','D'])).toEqual(["DUMMY"]);
+  }));
 
 });

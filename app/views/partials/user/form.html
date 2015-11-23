@@ -4,7 +4,6 @@
         <input
                 id="name"
                 type="text"
-                required="required"
                 class="form-control"
                 placeholder="Please enter a name for pairing."
                 ng-model="name"
@@ -12,7 +11,7 @@
                 />
     </div>
     <button
-            ng-click="addUser(name);"
+            ng-click="addUser(name); name=null"
             class="btn btn-default"
         >
         <i class="glyphicon glyphicon-plus-sign"></i> Add
